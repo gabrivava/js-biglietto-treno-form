@@ -13,7 +13,7 @@ console.log(distanceEl);
 var etaEl = document.querySelector('#età').value;
 console.log(etaEl);
 var costoBiglietto;
-var bottoneGeneraEl = document.querySelector('#genera_biglietto');
+var bottoneGeneraEl = document.getElementById('genera_biglietto');
 var nomeEl = document.querySelector('#nome_utente').value;
 console.log(nomeEl);
 /* function calcolaBiglietto(distanza, eta) {
@@ -35,8 +35,8 @@ var nomeBiglietto = document.getElementById('nome_biglietto');
 /* function completaCampi(nome) {
     return nomeBiglietto += nome;
 } */
-bottoneGeneraEl.addEventListener("click", completaCampi() {
-    nomeBiglietto = nomeEl;
+bottoneGeneraEl.addEventListener("click", function() {
+    nomeBiglietto.innerHTML = nomeEl;
 });
 
 
