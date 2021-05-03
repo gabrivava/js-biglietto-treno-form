@@ -8,34 +8,36 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 Questo richiederà un minimo di ricerca. */
 
 // input utente
-var distance = prompt('distanza da percorrere');
-var eta = prompt("eta del passeggero");
-var prezzoBase = 0.21;
+var distanceEl = document.querySelector('#distance').value;
+console.log(distanceEl);
+var etaEl = document.querySelector('#età').value;
+console.log(etaEl);
 var costoBiglietto;
-
-distance = parseInt(distance);
-eta = parseInt(eta);
-
-if (isNaN(distance) || isNaN(eta)) {
-    alert('hai sbagliato.')
-} else {
-
+var bottoneGeneraEl = document.querySelector('#genera_biglietto');
+var nomeEl = document.querySelector('#nome_utente').value;
+console.log(nomeEl);
+/* function calcolaBiglietto(distanza, eta) {
+    var prezzoBase = 0.21;
     // sconti
     var scontiMinori = 0.21 - (0.21 / 100 * 20);
     var scontiOver = 0.21 - (0.21 / 100 * 40);
-    //output
-    
-    if (eta < 18) {
-        costoBiglietto = distance * scontiMinori;
-    } else if (eta > 65) {
-        costoBiglietto = distance * scontiOver;
+    if (eta == 0) {
+        costoBiglietto = distanza * scontiMinori;
+    } else if (eta == 2) {
+        costoBiglietto = distanza * scontiOver;
     } else {
-        costoBiglietto = distance * prezzoBase;
-    }  
-    var messaggio = 'il costo del tuo biglietto è ' + costoBiglietto.toFixed(2) + ' €';
+        costoBiglietto = distanza * prezzoBase;
+    } 
+    var msg = console.log('il costo del tuo biglietto è ' + costoBiglietto.toFixed(2) + ' €'); 
+    return msg;
+} */
+var nomeBiglietto = document.getElementById('nome_biglietto');
+/* function completaCampi(nome) {
+    return nomeBiglietto += nome;
+} */
+bottoneGeneraEl.addEventListener("click", completaCampi() {
+    nomeBiglietto = nomeEl;
+});
 
-    // display the result
-    document.getElementById('msg_biglietto').innerHTML = messaggio;
 
 
-}

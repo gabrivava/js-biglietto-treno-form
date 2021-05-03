@@ -11,11 +11,18 @@
 .b-white {
     background-color: white;
 }
+.b-grey {
+    background-color: #808080;
+}
 .c-white {
     color: white;
 }
+.px-2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
 .p-1 {
-    padding: 0.5rem 2rem;
+    padding: 0.5rem;
 }
 .p-2 {
     padding: 1.5rem;
