@@ -1,0 +1,60 @@
+/* utility */
+.text-align-center {
+    text-align: center;
+}
+.b-lilla {
+    background-color: #B91450;
+}
+.c-lilla {
+    color: #B91450;
+}
+.b-white {
+    background-color: white;
+}
+.c-white {
+    color: white;
+}
+.p-1 {
+    padding: 0.5rem 2rem;
+}
+.p-2 {
+    padding: 1.5rem;
+}
+.mt-2 {
+    margin-top: 2rem;
+}
+.mx-2 {
+    margin: 1.3rem 0;
+}
+.border-2 {
+    border-radius: 10px;
+}
+.border-color-lilla {
+    border: 1px solid #B91450;
+    border-radius: 5px;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+.d-flex {
+    display: flex;
+}
+.jus-center {
+    justify-content: center;
+}
+.jus-space-around {
+    justify-content: space-around;
+}
+.flex-column {
+    flex-direction: column;
+}
+button {
+    padding: 0.3rem 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
