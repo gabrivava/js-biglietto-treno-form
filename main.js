@@ -16,7 +16,8 @@ var costoBiglietto;
 var bottoneGeneraEl = document.getElementById('genera_biglietto');
 var nomeEl = document.querySelector('#nome_utente').value;
 console.log(nomeEl);
-/* function calcolaBiglietto(distanza, eta) {
+//funzione calcola prezzo biglietti
+function calcolaBiglietto(distanza, eta) {
     var prezzoBase = 0.21;
     // sconti
     var scontiMinori = 0.21 - (0.21 / 100 * 20);
@@ -28,17 +29,40 @@ console.log(nomeEl);
     } else {
         costoBiglietto = distanza * prezzoBase;
     } 
-    var msg = console.log('il costo del tuo biglietto è ' + costoBiglietto.toFixed(2) + ' €'); 
-    return msg;
-} */
+   return costoBiglietto
+}
 
-/* function completaCampi(nome) {
-    return nomeBiglietto += nome;
-} */
+// funzione numeri casuali
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+// quale offerta viene applicata?
+function wichSconto (eta) {
+    if (eta == 0) {
+        return 'Sconto minore';
+    } else if (eta == 2) {
+        return 'Sconto over 65+';
+    }
+    return 'Prezzo standard';
+}
+//evento bottone
 bottoneGeneraEl.addEventListener("click", function() {
-    var nomeBiglietto = document.getElementById('nome_biglietto');
-    nomeBiglietto.innerHTML += nomeEl;
-});
+    document.getElementById('nome_biglietto').innerHTML = nomeEl;
+    document.getElementById('offerta').innerHTML = wichSconto(etaEl);
+    document.getElementById('carrozza').innerHTML = getRandomNumber(1, 40);
+    document.getElementById('codice').innerHTML = getRandomNumber(90000, 99999);
+    document.getElementById('costo_biglietto').innerHTML = calcolaBiglietto(distanceEl, etaEl).toFixed(2);
+}
+);
 
 
 
+
+/* Partendo dall'esercizio fatto tempo fa, aggiungiamo la parte visiva come da screenshot
+Creiamo un finto biglietto del treno con:
+Nome passeggero
+Codice treno (numero casuale tra 90000 e 100000 escluso)
+Numero carrozza
+Prezzo calcolato
+Categoria selezionata dall'utente
+Aggiungiamo una piccola animazione al click su "Crea" e "Annulla", se clicchiamo su annulla dobbiamo ripulire il form. */
