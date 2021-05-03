@@ -8,13 +8,13 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 Questo richiederà un minimo di ricerca. */
 
 // input utente
-var distanceEl = document.querySelector('#distance').value;
+var distanceEl = document.getElementById('distance').value;
 console.log(distanceEl);
 var etaEl = document.querySelector('#età').value;
 console.log(etaEl);
 var costoBiglietto;
 var bottoneGeneraEl = document.getElementById('genera_biglietto');
-var nomeEl = document.querySelector('#nome_utente').value;
+var nomeEl = document.getElementById('nome_utente').value;
 console.log(nomeEl);
 //funzione calcola prezzo biglietti
 function calcolaBiglietto(distanza, eta) {
