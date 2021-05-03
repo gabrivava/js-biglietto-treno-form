@@ -31,12 +31,13 @@ console.log(nomeEl);
     var msg = console.log('il costo del tuo biglietto è ' + costoBiglietto.toFixed(2) + ' €'); 
     return msg;
 } */
-var nomeBiglietto = document.getElementById('nome_biglietto');
+
 /* function completaCampi(nome) {
     return nomeBiglietto += nome;
 } */
 bottoneGeneraEl.addEventListener("click", function() {
-    nomeBiglietto.innerHTML = nomeEl;
+    var nomeBiglietto = document.getElementById('nome_biglietto');
+    nomeBiglietto.innerHTML += nomeEl;
 });
 
 
