@@ -54,7 +54,13 @@ bottoneGeneraEl.addEventListener("click", function() {
 }
 );
 // cancella biglitto
-
+document.
+getElementById('annulla_biglietto')
+.addEventListener('click', function () {
+    nomeEl.value = "";
+    distanceEl.value = "";
+    etaEl.value = "";
+})
 
 
 
