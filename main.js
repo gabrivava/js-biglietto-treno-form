@@ -8,14 +8,11 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 Questo richiederà un minimo di ricerca. */
 
 // input utente
-var distanceEl = document.getElementById('distance').value;
-console.log(distanceEl);
-var etaEl = document.querySelector('#età').value;
-console.log(etaEl);
+var distanceEl = document.getElementById('distance');
+var etaEl = document.querySelector('#età');
 var costoBiglietto;
 var bottoneGeneraEl = document.getElementById('genera_biglietto');
-var nomeEl = document.getElementById('nome_utente').value;
-console.log(nomeEl);
+var nomeEl = document.getElementById('nome_utente');
 //funzione calcola prezzo biglietti
 function calcolaBiglietto(distanza, eta) {
     var prezzoBase = 0.21;
@@ -24,12 +21,14 @@ function calcolaBiglietto(distanza, eta) {
     var scontiOver = 0.21 - (0.21 / 100 * 40);
     if (eta == 0) {
         costoBiglietto = distanza * scontiMinori;
+        return costoBiglietto
     } else if (eta == 2) {
         costoBiglietto = distanza * scontiOver;
+        return costoBiglietto
     } else {
         costoBiglietto = distanza * prezzoBase;
+        return costoBiglietto
     } 
-   return costoBiglietto
 }
 
 // funzione numeri casuali
@@ -47,13 +46,15 @@ function wichSconto (eta) {
 }
 //evento bottone
 bottoneGeneraEl.addEventListener("click", function() {
-    document.getElementById('nome_biglietto').innerHTML = nomeEl;
-    document.getElementById('offerta').innerHTML = wichSconto(etaEl);
+    document.getElementById('nome_biglietto').innerHTML = nomeEl.value;
+    document.getElementById('offerta').innerHTML = wichSconto(etaEl.value);
     document.getElementById('carrozza').innerHTML = getRandomNumber(1, 40);
     document.getElementById('codice').innerHTML = getRandomNumber(90000, 99999);
-    document.getElementById('costo_biglietto').innerHTML = calcolaBiglietto(distanceEl, etaEl).toFixed(2);
+    document.getElementById('costo_biglietto').innerHTML = calcolaBiglietto(Number(distanceEl.value), etaEl.value).toFixed(2);
 }
 );
+// cancella biglitto
+
 
 
 
